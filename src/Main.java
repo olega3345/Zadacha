@@ -1,14 +1,24 @@
-class main {
-    public static void main(String[] args) {
-        returningArr(new int[]{1, 2, 3, 4, 5, 6, 7});
-    }
-    public static int [] returningArr (int [] array) {
-        for (int i = 2; i < 7; i++) {
-            if (array[i] % 2 == 0) {
-                array[i]++;
+public class Main {
+    public static int [] returningArray(int[] inputArray) {
+        //Увеличиваем все четные числа на единицу
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] % 2 == 0) {
+                inputArray[i]++;
             }
-            System.out.println(array[i]);
         }
-        return array;
-     }
+        //Возвращаем кусок массива с 3 по 7 элемент
+        int[] subArray = new int[5];
+        for (int i = 0; i < 5; i++) {
+            subArray[i] = inputArray[i + 2];
+        }
+        return subArray;
+    }
+    public static void main(String[] args) {
+        int[] inoutArray = {1, 2, 3, 4, 5, 6, 7};
+        int [] result = returningArray(inoutArray);
+        for (int num : result) {
+            System.out.println(num);
+
+        }
+    }
 }
