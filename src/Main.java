@@ -10,5 +10,5 @@ class main {
             System.out.println(array[i]);
         }
         return array;
-    }
+     }
 }
